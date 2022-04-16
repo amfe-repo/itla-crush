@@ -1,0 +1,16 @@
+/* Colors */
+$primary: #FF7272;
+$secondary: #FFFFFF;
+$info: #545454;
+
+/* Shadows */
+$box-shadow: 0 0.6rem 1rem rgba($primary, .175);
+$box-shadow-lg: 0 1rem 3rem rgba($primary, .175);
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "info": $info
+);
+
+@import 'node_modules/bootstrap/scss/bootstrap';

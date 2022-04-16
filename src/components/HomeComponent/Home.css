@@ -1,0 +1,30 @@
+.home-component
+{
+    height: 100vh;
+    background-size: 100%;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('/public/resources/Image1.jpg');
+}
+
+.home-btn-txt
+{
+    text-align: center;
+    margin: auto auto !important;
+    width: 100%;
+}
+
+.home-btn-txt p
+{
+    margin-bottom: 2em;
+}
+
+.home-btn
+{
+    width: 20%;
+    display: block;
+    margin: 0 auto !important;
+    border-radius: 25px;
+}

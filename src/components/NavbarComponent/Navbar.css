@@ -1,0 +1,22 @@
+nav .navbar-elements .navbar-nav a
+{
+    text-align: center;
+    width: 6em;
+    border-radius: 5px;
+}
+
+nav .navbar-elements .navbar-nav a:hover
+{
+    color: var(--bs-secondary) !important;
+    background-color: var(--bs-primary);
+}
+
+/* Media querys */
+
+@media (max-width: 991px)
+{
+    nav .navbar-elements .navbar-nav a
+    {
+        width: 100%;
+    }
+}
