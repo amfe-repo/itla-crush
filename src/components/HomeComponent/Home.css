@@ -28,3 +28,9 @@
     margin: 0 auto !important;
     border-radius: 25px;
 }
+
+.home-btn:hover
+{
+    background-color: var(--bs-primary);
+    color: #fff !important;
+}

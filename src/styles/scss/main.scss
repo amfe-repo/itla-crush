@@ -5,7 +5,7 @@ $info: #545454;
 
 /* Shadows */
 $box-shadow: 0 0.6rem 1rem rgba($primary, .175);
-$box-shadow-lg: 0 1rem 3rem rgba($primary, .175);
+$box-shadow-lg: 1px 2px 10px 1px $primary;
 
 $theme-colors: (
   "primary": $primary,
