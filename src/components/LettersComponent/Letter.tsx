@@ -2,7 +2,7 @@ import './Letter.css';
 
 export default function Letter() {
   return (
-    <div className="card mx-4 letter-card" style={{"width": "18rem"}}>
+    <div className="card letter-card" style={{"width": "18rem"}}>
         <div className="card-body p-0">
             <h5 className="card-title bg-primary p-2 text-secondary">Card title</h5>
             <div className="letter-card-text">

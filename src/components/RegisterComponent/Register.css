@@ -1,0 +1,22 @@
+.register-form
+{
+    margin-top: 4%;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 991px) 
+{
+    .register-form
+    {
+        margin-top: 7%;
+    }
+}
+
+@media only screen and (max-width: 576px) 
+{
+    .register-form
+    {
+        margin-top: 10%;
+    }
+}
+

@@ -18,24 +18,19 @@
 
 .letters-btns-bar
 {
-    width: 100%;
+
     display: flex;
     justify-content: center;
-    margin-top: 7%;
+
 }
 
 .letters-btns-bar .btn
 {
-    padding: 0.6%;
-    width: 17%;
+
     color: var(--bs-secondary);
     border-radius: 20px;
 }
 
-.letters-all
-{
-    margin-top: 5%;
-}
 
 .letters-all .row
 {
@@ -45,4 +40,37 @@
 .letters-all .row .col .letter-card .card-body
 {
     margin: 0px !important;
+}
+
+.letters-all .letters-all-card
+{
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+.carousel-item .letter-card
+{
+    margin: 0px 3%;
+}
+
+@media only screen and (max-width: 991px) 
+{
+    .letters-all .row .letters-all-card
+    {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media only screen and (max-width: 1200px) 
+{
+    .carousel
+    {
+        display: none;
+    }
+    .letters-btns-bar .letters-btn-bar-change
+    {
+        display: none;
+    }
 }

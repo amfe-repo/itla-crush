@@ -13,10 +13,11 @@ export default function Navbar()
         </button>
         <div className="collapse navbar-collapse flex-row-reverse navbar-elements" id="navbarNavAltMarkup">
           <div className="navbar-nav">
-          <Link className="nav-link me-3 fs-5 text-info" to="/">Home</Link>
-            <Link className="nav-link me-3 fs-5 text-info" to="/letters">Letters</Link>
-            <Link className="nav-link me-3 fs-5 text-info" to="/login">Login</Link>
-            <Link className="nav-link me-3 fs-5 text-info" to="/register">Register</Link>
+          <Link className={`nav-link me-3 fs-5 text-info`} to="/">Home</Link>
+            <Link className={`nav-link me-3 fs-5 text-info`} to="/letters">Letters</Link>
+            <Link className={`nav-link me-3 fs-5 text-info`} to="/login">Login</Link>
+            <Link className={"nav-link me-3 fs-5 text-info"} to="/register">Register</Link> 
+            <Link className={"nav-link me-3 fs-5 text-info"} to="/perfil">Me</Link> 
           </div>
         </div>
       </div>

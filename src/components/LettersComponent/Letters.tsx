@@ -1,55 +1,58 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Letter from "./Letter";
 import LetterContainer from "./LetterContainer";
 import './Letters.css';
 
 const letterAllView = ()=>
   {
-    return(
+    return (
       <div className="letters-all">
 
-      <div className="row d-flex justify-content-center">
+      <div className="row justify-content-center">
 
-        <div className="col-3">
+        <div className="col-xl-4 col-lg-6 col-xxl-4 col-xxxl-3 letters-all-card">
           <Letter></Letter>
         </div>
-        <div className="col-3">
+
+        <div className="col-xl-4 col-lg-6 col-xxl-4 col-xxxl-3 letters-all-card">
           <Letter></Letter>
         </div>
-        <div className="col-3">
+
+        <div className="col-xl-4 col-lg-6 col-xxl-4 col-xxxl-3 letters-all-card">
+          <Letter></Letter>
+        </div>
+
+        <div className="col-xl-4 col-lg-6 col-xxl-4 col-xxxl-3 letters-all-card">
+          <Letter></Letter>
+        </div>
+
+        <div className="col-xl-4 col-lg-6 col-xxl-4 col-xxxl-3 letters-all-card">
+          <Letter></Letter>
+        </div>
+
+        <div className="col-xl-4 col-lg-6 col-xxl-4 col-xxxl-3 letters-all-card">
+          <Letter></Letter>
+        </div>
+
+        <div className="col-xl-4 col-lg-6 col-xxl-4 col-xxxl-3 letters-all-card">
+          <Letter></Letter>
+        </div>
+
+        <div className="col-xl-4 col-lg-6 col-xxl-4 col-xxxl-3 letters-all-card">
           <Letter></Letter>
         </div>
 
       </div>
 
-      <div className="row d-flex justify-content-center">
-
-        <div className="col-3">
-          <Letter></Letter>
-        </div>
-        <div className="col-3">
-          <Letter></Letter>
-        </div>
-        <div className="col-3">
-          <Letter></Letter>
-        </div>
-        
-      </div>
 
     </div>
     )
   }
 
-export default function Letters() 
-{
-  const [cardAll, setCardAll] = useState(false);
-
-  return (
-    <div className="container-fluid w-75 mx-auto p-0">
-      <p className="text-center fs-3 text-primary letters-title">
-        The love in the air
-      </p>
-
+  const LetterCarousel = ()=>
+  {
+    return(
       <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
         <div className="carousel-inner">
           <div className="carousel-item active">
@@ -71,13 +74,38 @@ export default function Letters()
           <span className="visually-hidden">Next</span>
         </button>
       </div>
-      <hr />
-      <div className="letters-btns-bar">
-        <div className="btn btn-primary mx-2" onClick={()=> setCardAll(!cardAll)}>View all</div>
-        <div className="btn btn-primary mx-2">Make a declaration</div>
-        <div className="btn btn-primary mx-2">Private declaration</div>
+    )
+  }
+
+export default function Letters() 
+{
+  const [cardAll, setCardAll] = useState(false);
+
+  useEffect(()=>
+  {
+    if(window.innerWidth <= 1200) setCardAll(true);
+  }, []);
+
+  return (
+    <div className="container-fluid w-75 mx-auto p-0">
+      <p className="text-center fs-3 text-primary letters-title">
+        The love in the air
+      </p>
+      {
+        !cardAll && 
+        <>
+          <LetterCarousel></LetterCarousel>
+          <hr />
+          <br />
+        </>
+      }
+      
+      <div className="row letters-btns-bar">
+        <div className="letters-btn-bar-change btn btn-primary col-sm-12 col-md-12 col-lg-3 col-xxl-2 my-lg-0 my-1 mx-1" onClick={()=> setCardAll(!cardAll)}>Change view</div>
+        <Link to="/your-declaration" className="btn btn-primary col-sm-12 col-md-12 col-lg-3 col-xxl-2 my-lg-0 my-1 mx-1">Make a declaration</Link>
+        <div className="btn btn-primary col-sm-12 col-md-12 col-lg-3 col-xxl-2 my-lg-0 my-1 mx-1">Private declaration</div>
       </div>
-        
+
       {
         cardAll && letterAllView()  
       }

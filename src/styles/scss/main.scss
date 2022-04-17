@@ -13,4 +13,26 @@ $theme-colors: (
   "info": $info
 );
 
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+$my-grid-breakpoints: (
+  xxxl: 1600px
+);
+
+$grid-breakpoints: map-merge($grid-breakpoints, $my-grid-breakpoints);
+
+//$form-select-indicator-color: $primary;
+$form-select-indicator: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='41' height='40' viewBox='0 0 41 40'><rect id='Rectángulo_39' data-name='Rectángulo 39' width='41' height='40' fill='#ff7272'/><path id='Polígono_1' data-name='Polígono 1' d='M9.625,1.584a1,1,0,0,1,1.75,0l8.8,15.933A1,1,0,0,1,19.3,19H1.7A1,1,0,0,1,.82,17.516Z' transform='translate(31 30) rotate(180)' fill='#fff'/></svg>");
+
+$form-select-bg-size: 38px 38px;
+
+$form-select-bg-position: right 0rem center;
+
 @import 'node_modules/bootstrap/scss/bootstrap';
