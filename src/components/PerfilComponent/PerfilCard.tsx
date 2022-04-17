@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './PerfilCard.css';
 
 export default function PerfilCard() {
@@ -21,7 +22,7 @@ export default function PerfilCard() {
         </div>
     </form>
     <div className="button-register w-100 d-flex justify-content-center">
-        <button type="submit" className="btn btn-primary text-secondary form-btn-submit mt-3">Make declaration</button>
+        <Link to="/your-declaration" type="submit" className="btn btn-primary text-secondary form-btn-submit mt-3">Make declaration</Link>
         <button type="submit" className="btn btn-primary text-secondary form-btn-submit mt-3">Your declarations</button>
     </div>
     

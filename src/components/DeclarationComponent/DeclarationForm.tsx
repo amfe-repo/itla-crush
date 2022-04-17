@@ -7,35 +7,23 @@ export default function DeclarationForm() {
         <div className="mb-3">
             <label htmlFor="exampleInputEmail2" className="form-label">Destinatary</label>
             <select className="form-select" aria-label="Default select example">
-                <option selected>Open this select menu</option>
+                <option selected>Select a person</option>
                 <option value="1">One</option>
                 <option value="2">Two</option>
                 <option value="3">Three</option>
             </select>
         </div>
         <div className="mb-3">
-            <label htmlFor="exampleInputEmail2" className="form-label">Lastname</label>
-            <input type="text" className="form-control" id="exampleInputEmail2" aria-describedby="emailHelp" required />
+            <label htmlFor="exampleInputEmail2" className="form-label">Your beautiful words</label>
+            <textarea className="form-control" required>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa similique dignissimos labore maxime blanditiis asperiores soluta tempora consectetur, expedita mollitia dolorum ullam sapiente minima voluptatum quis? Dicta ducimus nisi aspernatur optio aut eaque consequuntur ullam! Corrupti nostrum nesciunt praesentium voluptates, excepturi quae totam! Et inventore vel amet veniam.
+            </textarea>
         </div>
-        <div className="mb-3">
-            <label htmlFor="exampleInputEmail3" className="form-label">User</label>
-            <input type="text" className="form-control" id="exampleInputEmail2" aria-describedby="emailHelp" required />
-        </div>
-        <div className="mb-3">
-            <label htmlFor="exampleInputEmail4" className="form-label">Email</label>
-            <input type="email" className="form-control" id="exampleInputEmail3" aria-describedby="emailHelp" required />
-        </div>
-        <div className="mb-3">
-            <label htmlFor="exampleInputEmail3" className="form-label">Phone number</label>
-            <input type="text" className="form-control" id="exampleInputEmail2" aria-describedby="emailHelp" required />
-        </div>
-        <div className="mb-3">
-            <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-            <input type="password" className="form-control" id="exampleInputPassword1" required />
-        </div>
-        <div className="mb-3">
-            <label htmlFor="exampleInputPassword2" className="form-label">Password</label>
-            <input type="password" className="form-control" id="exampleInputPassword2" required />
+        <div className="form-check">
+            <input className="form-check-input" type="checkbox" value="" id="flexCheckChecked" defaultChecked={true}/>
+            <label className="form-check-label" htmlFor="flexCheckChecked">
+                This declaration is public
+            </label>
         </div>
     </form>
     <div className="button-register w-100 d-flex justify-content-center">
