@@ -29,8 +29,74 @@
     border-radius: 25px;
 }
 
+a
+{
+    text-decoration: none;
+}
+
 .home-btn:hover
 {
     background-color: var(--bs-primary);
     color: #fff !important;
 }
+
+
+/*=== MEDIA QUERY ===*/
+
+@media only screen and (max-width: 600px)
+{
+    .home-btn
+    {
+        width: 80%;
+    }
+}
+
+@media only screen and (min-width: 600px)
+{
+    .home-btn
+    {
+        width: 60%;
+    }
+}
+
+@media only screen and (min-width: 768px)
+{
+    .home-btn
+    {
+        width: 50%;
+    }
+}
+
+@media only screen and (min-width: 992px) 
+{
+    .home-btn
+    {
+        width: 40%;
+    }
+}
+
+
+@media only screen and (min-width: 1200px) 
+{
+    .home-btn
+    {
+        width: 35%;
+    }
+}
+
+@media only screen and (min-width: 1400px) 
+{
+    .home-btn
+    {
+        width: 30%;
+    }
+}
+
+@media only screen and (min-width: 1800px) 
+{
+    .home-btn
+    {
+        width: 20%;
+    }
+}
+

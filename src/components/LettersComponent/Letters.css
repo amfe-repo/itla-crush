@@ -1,0 +1,48 @@
+.carousel-control-next
+{
+    width: 3.5%;
+    border-radius: 40px;
+}
+
+.carousel-control-prev
+{
+    width: 3.5%;
+    border-radius: 40px;
+}
+
+.letters-title
+{
+    margin-top: 10%;
+    margin-bottom: 3%;
+}
+
+.letters-btns-bar
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 7%;
+}
+
+.letters-btns-bar .btn
+{
+    padding: 0.6%;
+    width: 17%;
+    color: var(--bs-secondary);
+    border-radius: 20px;
+}
+
+.letters-all
+{
+    margin-top: 5%;
+}
+
+.letters-all .row
+{
+    margin-bottom: 5%;
+}
+
+.letters-all .row .col .letter-card .card-body
+{
+    margin: 0px !important;
+}
