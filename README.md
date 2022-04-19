@@ -7,3 +7,6 @@
 ![Captura de pantalla](./capture/Captura5.PNG)
 ![Captura de pantalla](./capture/Captura6.PNG)
 ![Captura de pantalla](./capture/Captura7.PNG)
+![Captura de pantalla](./capture/Captura8.PNG)
+![Captura de pantalla](./capture/Captura9.PNG)
+![Captura de pantalla](./capture/Captura10.PNG)
