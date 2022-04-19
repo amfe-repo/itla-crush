@@ -20,10 +20,18 @@ export default function DeclarationForm() {
             </textarea>
         </div>
         <div className="form-check">
-            <input className="form-check-input" type="checkbox" value="" id="flexCheckChecked" defaultChecked={true}/>
-            <label className="form-check-label" htmlFor="flexCheckChecked">
+            <div className="check-public">
+                <input className="form-check-input" type="checkbox" value="" id="flexCheckChecked" defaultChecked={true}/>
+                <label className="form-check-label" htmlFor="flexCheckChecked">
                 This declaration is public
-            </label>
+                </label>
+            </div>
+            <div className="check-anonymous">
+                <input className="form-check-input" type="checkbox" value="" id="flexCheckChecked2" defaultChecked={false}/>
+                <label className="form-check-label" htmlFor="flexCheckChecked2">
+                    Your are anonymous?
+                </label>
+            </div>
         </div>
     </form>
     <div className="button-register w-100 d-flex justify-content-center">
