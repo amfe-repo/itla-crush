@@ -1,48 +1,30 @@
+import { DocumentData } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { getLetters } from "../../services/firebase/api";
+import { getSession } from "../../services/localstorage/apiSession";
 import Letter from "./Letter";
 import LetterContainer from "./LetterContainer";
 import './Letters.css';
 
-const letterAllView = ()=>
+const letterAllView = (letters: DocumentData)=>
   {
+    let counter = 0;
+    
     return (
       <div className="letters-all">
 
       <div className="row justify-content-center">
-
-        <div className="col-xl-4 col-lg-6 col-xxl-4 col-xxxl-3 letters-all-card">
-          <Letter></Letter>
-        </div>
-
-        <div className="col-xl-4 col-lg-6 col-xxl-4 col-xxxl-3 letters-all-card">
-          <Letter></Letter>
-        </div>
-
-        <div className="col-xl-4 col-lg-6 col-xxl-4 col-xxxl-3 letters-all-card">
-          <Letter></Letter>
-        </div>
-
-        <div className="col-xl-4 col-lg-6 col-xxl-4 col-xxxl-3 letters-all-card">
-          <Letter></Letter>
-        </div>
-
-        <div className="col-xl-4 col-lg-6 col-xxl-4 col-xxxl-3 letters-all-card">
-          <Letter></Letter>
-        </div>
-
-        <div className="col-xl-4 col-lg-6 col-xxl-4 col-xxxl-3 letters-all-card">
-          <Letter></Letter>
-        </div>
-
-        <div className="col-xl-4 col-lg-6 col-xxl-4 col-xxxl-3 letters-all-card">
-          <Letter></Letter>
-        </div>
-
-        <div className="col-xl-4 col-lg-6 col-xxl-4 col-xxxl-3 letters-all-card">
-          <Letter></Letter>
-        </div>
-
+      { 
+      letters ? letters.map((element:any) => 
+        {
+          counter += 1;
+          return (<div className="col-xl-4 col-lg-6 col-xxl-4 col-xxxl-3 letters-all-card">
+            <Letter key={counter} author={element.data().author} to={element.data().destinatary} description={element.data().body}></Letter>
+          </div>)
+        }) : "Not have letters" 
+      }
+      
       </div>
 
 
@@ -50,8 +32,18 @@ const letterAllView = ()=>
     )
   }
 
-  const LetterCarousel = ()=>
+  /*const LetterCarousel = (letters: DocumentData)=>
   {
+    let arrayElements: any[][] = [];
+
+    if(letters)
+    {
+      for (let index = 0; index < (letters.letters.length); index+=3) 
+      {
+        arrayElements[index].push(letters.letters.slice(index, index+3));
+      }
+    }
+
     return(
       <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
         <div className="carousel-inner">
@@ -75,39 +67,55 @@ const letterAllView = ()=>
         </button>
       </div>
     )
-  }
+  }*/
 
 export default function Letters() 
 {
-  const [cardAll, setCardAll] = useState(false);
+  const [cardAll, setCardAll] = useState(true);
+  const [letters, setLetters] = useState<DocumentData>([]);
+
+  useEffect(()=>
+    {
+
+      async function settingLetters()
+      {
+        let pub: boolean = true;
+  
+        if (getSession()) pub = false; 
+  
+        setLetters(await getLetters(pub));
+      }
+
+      settingLetters();
+    }, []);
 
   useEffect(()=>
   {
     if(window.innerWidth <= 1200) setCardAll(true);
   }, []);
-
+  
   return (
     <div className="container-fluid w-75 mx-auto p-0">
       <p className="text-center fs-3 text-primary letters-title">
         The love in the air
       </p>
-      {
+      {/*
         !cardAll && 
         <>
-          <LetterCarousel></LetterCarousel>
+          <LetterCarousel letters={letters}></LetterCarousel>
           <hr />
           <br />
-        </>
+        </>*/
       }
       
       <div className="row letters-btns-bar">
-        <div className="letters-btn-bar-change btn btn-primary col-sm-12 col-md-12 col-lg-3 col-xxl-2 my-lg-0 my-1 mx-1" onClick={()=> setCardAll(!cardAll)}>Change view</div>
+        { /*<div className="letters-btn-bar-change btn btn-primary col-sm-12 col-md-12 col-lg-3 col-xxl-2 my-lg-0 my-1 mx-1" onClick={()=> setCardAll(!cardAll)}>Change view</div> */}
         <Link to="/your-declaration" className="btn btn-primary col-sm-12 col-md-12 col-lg-3 col-xxl-2 my-lg-0 my-1 mx-1">Make a declaration</Link>
-        <div className="btn btn-primary col-sm-12 col-md-12 col-lg-3 col-xxl-2 my-lg-0 my-1 mx-1">Private declaration</div>
+        {/*<div className="btn btn-primary col-sm-12 col-md-12 col-lg-3 col-xxl-2 my-lg-0 my-1 mx-1">Private declaration</div>*/}
       </div>
 
       {
-        cardAll && letterAllView()  
+        cardAll && letterAllView(letters)  
       }
     </div>
   )

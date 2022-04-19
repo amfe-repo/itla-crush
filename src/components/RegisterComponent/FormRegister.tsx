@@ -1,6 +1,8 @@
 import { FormEvent, FormEventHandler, useState } from 'react';
+import { Navigate } from 'react-router-dom';
 
 import { addUser } from '../../services/firebase/api';
+import { getSession } from '../../services/localstorage/apiSession';
 import { successAlert, errorAlert } from '../../utilities/alerts';
 
 import './FormRegister.css';
@@ -43,6 +45,7 @@ export default function FormRegister() {
 
   return (
       <>
+      {getSession() && <Navigate replace to ="/perfil"/>}
     <form className="mx-auto my-0 border border-info shadow-lg text-info mb-5 p-4" onSubmit={createUser}>
         <div className="mb-3">
             <label htmlFor="exampleInputEmail1" className="form-label">Name</label>
